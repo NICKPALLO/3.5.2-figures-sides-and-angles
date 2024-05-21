@@ -2,126 +2,17 @@
 #include <string>
 #include <Windows.h>
 
-class Figure
-{
-protected:
-	int sizeNum;
-	std::string name;
-public:
-	Figure()
-	{
-		sizeNum = 0;
-		name = "Фигура";
-	}
-	int get_sizeNum() {
-		return sizeNum;
-	}
-	std::string get_name() {
-		return name;
-	}
-	virtual void print_info(){}
-};
+#include"Figure.h"
+#include"Triangle.h"
+#include"Right_triangle.h"
+#include"Isosceles_triangle.h"
+#include"Equilateral_triangle.h"
 
-class Triangle : public Figure
-{
-protected:
-	int a, b, c, A, B, C;
-public:
-	Triangle(int a, int b, int c, int A, int B, int C):Triangle(a, b, c, A, B, C, "Треугольник"){}
-
-	Triangle(int a, int b, int c, int A, int B, int C, std::string name)
-	{
-		sizeNum = 3;
-		this->a = a;
-		this->b = b;
-		this->c = c;
-		this->A = A;
-		this->B = B;
-		this->C = C;
-		this->name = name;
-	}
-	void print_info() override
-	{
-		std::cout << name << ':' << std::endl;
-		std::cout << "Cтороны: a=" << a << " b=" << b << " c=" << c << std::endl;
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << std::endl;
-	}
-};
-
-class Right_triangle : public Triangle
-{
-public:
-	Right_triangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90, "Прямоугольный треугольник")
-	{
-	}
-};
-
-class Isosceles_triangle : public Triangle
-{
-public:
-	Isosceles_triangle(int a, int b, int A, int B) : Triangle(a, b, b, A, B, B, "Равнобедренный треугольник")
-	{
-	}
-};
-
-class Equilateral_triangle : public Triangle
-{
-public:
-	Equilateral_triangle(int a):Triangle(a,a,a,60,60,60,"Равносторонний треугольник")
-	{}
-};
-
-
-class Quadrilateral : public Figure
-{
-protected:
-	int a, b, c, d, A, B, C, D;
-public:
-	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D):Quadrilateral(a, b, c, d, A, B, C, D, "Четырехугольник"){}
-	Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D, std::string name)
-	{
-		sizeNum = 4;
-		this->a = a;
-		this->b = b;
-		this->c = c;
-		this->d = d;
-		this->A = A;
-		this->B = B;
-		this->C = C;
-		this->D = D;
-		this->name = name;
-	}
-	void print_info() override
-	{
-		std::cout << name << ':' << std::endl;
-		std::cout << "Cтороны: a=" << a << " b=" << b << " c=" << c <<" d=" << d << std::endl;
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-	}
-};
-
-class Rectangl : public Quadrilateral
-	{
-	public:
-		Rectangl(int a, int b) : Quadrilateral(a, b, a, b, 90, 90, 90, 90, "Прямоугольник") {}
-	};
-
-class Square : public Quadrilateral
-{
-public:
-	Square(int a) : Quadrilateral(a, a, a, a, 90, 90, 90, 90, "Квадрат") {}
-};
-
-class Parallelogram : public Quadrilateral
-{
-public: 
-	Parallelogram(int a, int b, int A, int B) :Quadrilateral(a, b, a, b, A, B, A, B, "Параллелограмм") {}
-};
-
-class Rhombus : public Quadrilateral
-{
-public:
-	Rhombus(int a, int A, int B) :Quadrilateral(a, a, a, a, A, B, A, B, "Ромб") {}
-};
+#include"Quadrilateral.h"
+#include"Rectangl.h"
+#include"Square.h"
+#include"Parallelogram.h"
+#include"Rhombus.h"
 
 void printInfo(Figure* figure)
 {
