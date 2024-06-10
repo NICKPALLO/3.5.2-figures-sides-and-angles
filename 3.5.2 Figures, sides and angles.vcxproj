@@ -129,12 +129,20 @@
   <ItemGroup>
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parallelogram.cpp" />
     <ClCompile Include="Quadrilateral.cpp" />
+    <ClCompile Include="Rectangl.cpp" />
+    <ClCompile Include="Rhombus.cpp" />
+    <ClCompile Include="Right_triangle.cpp" />
+    <ClCompile Include="Isosceles_triangle.cpp" />
+    <ClCompile Include="Equilateral_triangle.cpp" />
+    <ClCompile Include="Square.cpp" />
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Equilateral_triangle.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="Error.h" />
     <ClInclude Include="Isosceles_triangle.h" />
     <ClInclude Include="Parallelogram.h" />
     <ClInclude Include="Quadrilateral.h" />

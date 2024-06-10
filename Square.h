@@ -4,5 +4,5 @@
 class Square : public Quadrilateral
 {
 public:
-	Square(int a) : Quadrilateral(a, a, a, a, 90, 90, 90, 90, " вадрат") {}
+	Square(int a);
 };

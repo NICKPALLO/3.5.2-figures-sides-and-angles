@@ -1,4 +1,5 @@
 #include "Quadrilateral.h"
+#include "Error.h"
 
 Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D, std::string name)
 {
@@ -12,11 +13,23 @@ Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
 	this->C = C;
 	this->D = D;
 	this->name = name;
+	try
+	{
+
+		if (A + B + C +D != 360 || sizeNum != 4)
+		{
+			throw Error("Сумма углов не равна 360");
+		}
+	}
+	catch (Error ex)
+	{
+		permission = false;
+		std::cout << "Ошибка создания фигуры (" << name << "). Причина: " << ex.what();
+	}
 }
 
 void Quadrilateral::print_info()
 {
-	std::cout << name << ':' << std::endl;
-	std::cout << "Cтороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-	std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+	std::cout << name << " (стороны " << a << ", " << b << ", " << c << ", " << d << "; углы " << A << ", " << B << ", " << C << ", " << D << ") создан";
+	std::cout << std::endl;
 }

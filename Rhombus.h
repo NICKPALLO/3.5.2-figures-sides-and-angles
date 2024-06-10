@@ -4,5 +4,5 @@
 class Rhombus : public Quadrilateral
 {
 public:
-	Rhombus(int a, int A, int B) :Quadrilateral(a, a, a, a, A, B, A, B, "Ромб") {}
+	Rhombus(int a, int A, int B);
 };
